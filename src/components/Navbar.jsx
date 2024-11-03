@@ -21,7 +21,7 @@ export default function Navbar() {
   );
 
   const { pathname } = useLocation();
-  console.log(pathname);
+
   return (
     <div
       className={`w-[95%] rounded-t-3xl mt-6 mx-auto ${

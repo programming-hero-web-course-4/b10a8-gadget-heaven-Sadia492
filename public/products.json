@@ -1,145 +1,138 @@
 [
   {
     "product_id": 1,
-    "product_title": "Gaming Laptop G7",
-    "product_image": "https://example.com/images/gaming-laptop.jpg",
+    "product_title": "Ultra Laptop Pro",
+    "product_image": "https://example.com/images/ultra-laptop-pro.jpg",
     "category": "Computers",
-    "price": 1050,
-    "description": "High-performance gaming laptop with NVIDIA graphics and a fast refresh rate display.",
-    "specification": ["Intel i7 Processor", "16GB RAM", "1TB SSD", "RTX 3060"],
+    "price": 1200,
+    "description": "High-performance laptop with long battery life, ideal for work and play.",
+    "specification": ["16GB RAM", "512GB SSD", "Intel i7 Processor"],
     "availability": true,
     "rating": 4.8
   },
   {
     "product_id": 2,
-    "product_title": "Ultrabook X",
-    "product_image": "https://example.com/images/ultrabook.jpg",
+    "product_title": "Gaming Desktop X",
+    "product_image": "https://example.com/images/gaming-desktop-x.jpg",
     "category": "Computers",
-    "price": 950,
-    "description": "Lightweight ultrabook with long battery life and premium design.",
-    "specification": [
-      "Intel i5 Processor",
-      "8GB RAM",
-      "512GB SSD",
-      "13.3-inch display"
-    ],
+    "price": 1500,
+    "description": "Powerful gaming desktop with advanced graphics and cooling system.",
+    "specification": ["32GB RAM", "1TB SSD", "NVIDIA RTX 3070"],
     "availability": true,
-    "rating": 4.5
+    "rating": 4.9
   },
   {
     "product_id": 3,
-    "product_title": "Compact Desktop PC",
-    "product_image": "https://example.com/images/desktop-pc.jpg",
+    "product_title": "Portable Chromebook",
+    "product_image": "https://example.com/images/portable-chromebook.jpg",
     "category": "Computers",
-    "price": 650,
-    "description": "Compact desktop PC with a powerful processor and ample storage.",
-    "specification": [
-      "Intel i3 Processor",
-      "8GB RAM",
-      "256GB SSD",
-      "Windows 11"
-    ],
-    "availability": true,
-    "rating": 4.1
-  },
-  {
-    "product_id": 4,
-    "product_title": "Hybrid 2-in-1 Laptop",
-    "product_image": "https://example.com/images/2-in-1-laptop.jpg",
-    "category": "Computers",
-    "price": 750,
-    "description": "Convertible 2-in-1 laptop for work and entertainment on the go.",
-    "specification": [
-      "Intel i5 Processor",
-      "8GB RAM",
-      "256GB SSD",
-      "Touchscreen"
-    ],
+    "price": 500,
+    "description": "Lightweight and portable Chromebook for on-the-go productivity.",
+    "specification": ["8GB RAM", "64GB eMMC", "Intel Celeron Processor"],
     "availability": true,
     "rating": 4.2
   },
   {
-    "product_id": 5,
-    "product_title": "Workstation Desktop",
-    "product_image": "https://example.com/images/workstation-desktop.jpg",
+    "product_id": 4,
+    "product_title": "All-in-One Desktop",
+    "product_image": "https://example.com/images/all-in-one-desktop.jpg",
     "category": "Computers",
-    "price": 1200,
-    "description": "Powerful workstation for creative professionals with advanced graphics.",
-    "specification": [
-      "AMD Ryzen 9 Processor",
-      "32GB RAM",
-      "2TB HDD + 512GB SSD",
-      "RTX 3090"
-    ],
+    "price": 850,
+    "description": "Space-saving all-in-one desktop with powerful performance.",
+    "specification": ["16GB RAM", "1TB HDD", "Intel i5 Processor"],
+    "availability": false,
+    "rating": 4.5
+  },
+  {
+    "product_id": 5,
+    "product_title": "Workstation Pro",
+    "product_image": "https://example.com/images/workstation-pro.jpg",
+    "category": "Computers",
+    "price": 1300,
+    "description": "High-end workstation for professionals requiring top performance.",
+    "specification": ["32GB RAM", "1TB SSD", "AMD Ryzen 9 Processor"],
     "availability": true,
     "rating": 4.7
   },
   {
     "product_id": 6,
-    "product_title": "Chromebook Lite",
-    "product_image": "https://example.com/images/chromebook.jpg",
+    "product_title": "Mini PC Cube",
+    "product_image": "https://example.com/images/mini-pc-cube.jpg",
     "category": "Computers",
-    "price": 350,
-    "description": "Budget-friendly Chromebook for everyday tasks and light computing.",
-    "specification": [
-      "MediaTek Processor",
-      "4GB RAM",
-      "64GB eMMC",
-      "Chrome OS"
-    ],
+    "price": 600,
+    "description": "Compact mini PC with powerful capabilities for everyday tasks.",
+    "specification": ["8GB RAM", "256GB SSD", "Intel i3 Processor"],
     "availability": true,
-    "rating": 4.0
+    "rating": 4.3
   },
   {
     "product_id": 7,
-    "product_title": "Smartphone Z20",
-    "product_image": "https://example.com/images/smartphone.jpg",
-    "category": "Phones",
-    "price": 699,
-    "description": "Flagship smartphone with 5G capability and a stunning display.",
-    "specification": [
-      "128GB Storage",
-      "6.5-inch OLED display",
-      "Triple camera"
-    ],
-    "availability": false,
+    "product_title": "Smart Watch Series X",
+    "product_image": "https://example.com/images/smart-watch-series-x.jpg",
+    "category": "Smart Watches",
+    "price": 250,
+    "description": "Feature-rich smartwatch with health and fitness tracking.",
+    "specification": ["Heart Rate Monitor", "GPS", "Water Resistant"],
+    "availability": true,
     "rating": 4.6
   },
   {
     "product_id": 8,
-    "product_title": "Budget Smartphone Lite",
-    "product_image": "https://example.com/images/budget-smartphone.jpg",
-    "category": "Phones",
-    "price": 150,
-    "description": "Affordable smartphone with great performance and battery life.",
-    "specification": ["64GB Storage", "5.8-inch display", "Dual camera"],
-    "availability": true,
-    "rating": 4.2
+    "product_title": "Fitness Watch Pro",
+    "product_image": "https://example.com/images/fitness-watch-pro.jpg",
+    "category": "Smart Watches",
+    "price": 300,
+    "description": "Advanced fitness smartwatch with customizable watch faces.",
+    "specification": ["Sleep Tracking", "SpO2 Monitor", "Customizable Faces"],
+    "availability": false,
+    "rating": 4.4
   },
   {
     "product_id": 9,
-    "product_title": "Smartwatch Series 5",
-    "product_image": "https://example.com/images/smartwatch.jpg",
-    "category": "Smart Watches",
-    "price": 250,
-    "description": "Smartwatch with health tracking, GPS, and long battery life.",
-    "specification": ["GPS", "Heart rate monitor", "7-day battery life"],
+    "product_title": "Ultra Power Bank 20k",
+    "product_image": "https://example.com/images/ultra-power-bank-20k.jpg",
+    "category": "Power Banks",
+    "price": 70,
+    "description": "High-capacity power bank with fast charging capabilities.",
+    "specification": ["20,000mAh", "Fast Charging", "Dual USB Ports"],
     "availability": true,
     "rating": 4.5
   },
   {
     "product_id": 10,
-    "product_title": "Fitness Smartwatch Pro",
-    "product_image": "https://example.com/images/fitness-smartwatch.jpg",
-    "category": "Smart Watches",
-    "price": 180,
-    "description": "Advanced smartwatch for fitness tracking with multiple sports modes.",
-    "specification": [
-      "Heart rate monitor",
-      "Sleep tracking",
-      "5-day battery life"
-    ],
-    "availability": false,
+    "product_title": "Compact Power Bank 10k",
+    "product_image": "https://example.com/images/compact-power-bank-10k.jpg",
+    "category": "Power Banks",
+    "price": 50,
+    "description": "Portable power bank with compact design for easy carrying.",
+    "specification": ["10,000mAh", "Type-C and USB-A Ports", "LED Indicator"],
+    "availability": true,
     "rating": 4.3
+  },
+  {
+    "product_id": 11,
+    "product_title": "Phone Max Pro",
+    "product_image": "https://example.com/images/phone-max-pro.jpg",
+    "category": "Phones",
+    "price": 799,
+    "description": "High-end smartphone with advanced camera features and fast processing speed.",
+    "specification": [
+      "256GB Storage",
+      "6.7-inch AMOLED display",
+      "Quad camera"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 12,
+    "product_title": "Compact Phone Mini",
+    "product_image": "https://example.com/images/compact-phone-mini.jpg",
+    "category": "Phones",
+    "price": 499,
+    "description": "Compact smartphone with powerful performance and long-lasting battery.",
+    "specification": ["128GB Storage", "5.5-inch display", "Dual camera"],
+    "availability": true,
+    "rating": 4.4
   }
 ]
