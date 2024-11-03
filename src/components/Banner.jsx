@@ -3,7 +3,7 @@ import BannerImg from "../assets/banner.jpg";
 
 export default function Banner() {
   return (
-    <div className="relative">
+    <div className=" relative">
       <div className="bg-primary text-white w-[95%] mx-auto flex flex-col text-center justify-center space-y-6 items-center pt-12 rounded-b-3xl pb-48">
         <h1 className="font-bold text-5xl lg:w-3/4">
           Upgrade Your Tech Accessorize with Gadget Heaven Accessories
@@ -19,7 +19,7 @@ export default function Banner() {
         </div>
       </div>
       <div className="text-center flex justify-center items-center">
-        <div className="lg:w-1/2 border-2 h-[450px] rounded-2xl border-white p-6 bg-white/30 backdrop-blur-3xl  lg:absolute lg:top-[65%]">
+        <div className="lg:w-1/2 border-2 h-[450px] rounded-2xl border-white p-6 bg-white/30 backdrop-blur-3xl relative -top-40 ">
           <img className="w-full h-full rounded-2xl" src={BannerImg} alt="" />
         </div>
       </div>
