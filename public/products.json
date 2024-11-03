@@ -1,0 +1,145 @@
+[
+  {
+    "product_id": 1,
+    "product_title": "Gaming Laptop G7",
+    "product_image": "https://example.com/images/gaming-laptop.jpg",
+    "category": "Computers",
+    "price": 1050,
+    "description": "High-performance gaming laptop with NVIDIA graphics and a fast refresh rate display.",
+    "specification": ["Intel i7 Processor", "16GB RAM", "1TB SSD", "RTX 3060"],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": 2,
+    "product_title": "Ultrabook X",
+    "product_image": "https://example.com/images/ultrabook.jpg",
+    "category": "Computers",
+    "price": 950,
+    "description": "Lightweight ultrabook with long battery life and premium design.",
+    "specification": [
+      "Intel i5 Processor",
+      "8GB RAM",
+      "512GB SSD",
+      "13.3-inch display"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 3,
+    "product_title": "Compact Desktop PC",
+    "product_image": "https://example.com/images/desktop-pc.jpg",
+    "category": "Computers",
+    "price": 650,
+    "description": "Compact desktop PC with a powerful processor and ample storage.",
+    "specification": [
+      "Intel i3 Processor",
+      "8GB RAM",
+      "256GB SSD",
+      "Windows 11"
+    ],
+    "availability": true,
+    "rating": 4.1
+  },
+  {
+    "product_id": 4,
+    "product_title": "Hybrid 2-in-1 Laptop",
+    "product_image": "https://example.com/images/2-in-1-laptop.jpg",
+    "category": "Computers",
+    "price": 750,
+    "description": "Convertible 2-in-1 laptop for work and entertainment on the go.",
+    "specification": [
+      "Intel i5 Processor",
+      "8GB RAM",
+      "256GB SSD",
+      "Touchscreen"
+    ],
+    "availability": true,
+    "rating": 4.2
+  },
+  {
+    "product_id": 5,
+    "product_title": "Workstation Desktop",
+    "product_image": "https://example.com/images/workstation-desktop.jpg",
+    "category": "Computers",
+    "price": 1200,
+    "description": "Powerful workstation for creative professionals with advanced graphics.",
+    "specification": [
+      "AMD Ryzen 9 Processor",
+      "32GB RAM",
+      "2TB HDD + 512GB SSD",
+      "RTX 3090"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 6,
+    "product_title": "Chromebook Lite",
+    "product_image": "https://example.com/images/chromebook.jpg",
+    "category": "Computers",
+    "price": 350,
+    "description": "Budget-friendly Chromebook for everyday tasks and light computing.",
+    "specification": [
+      "MediaTek Processor",
+      "4GB RAM",
+      "64GB eMMC",
+      "Chrome OS"
+    ],
+    "availability": true,
+    "rating": 4.0
+  },
+  {
+    "product_id": 7,
+    "product_title": "Smartphone Z20",
+    "product_image": "https://example.com/images/smartphone.jpg",
+    "category": "Phones",
+    "price": 699,
+    "description": "Flagship smartphone with 5G capability and a stunning display.",
+    "specification": [
+      "128GB Storage",
+      "6.5-inch OLED display",
+      "Triple camera"
+    ],
+    "availability": false,
+    "rating": 4.6
+  },
+  {
+    "product_id": 8,
+    "product_title": "Budget Smartphone Lite",
+    "product_image": "https://example.com/images/budget-smartphone.jpg",
+    "category": "Phones",
+    "price": 150,
+    "description": "Affordable smartphone with great performance and battery life.",
+    "specification": ["64GB Storage", "5.8-inch display", "Dual camera"],
+    "availability": true,
+    "rating": 4.2
+  },
+  {
+    "product_id": 9,
+    "product_title": "Smartwatch Series 5",
+    "product_image": "https://example.com/images/smartwatch.jpg",
+    "category": "Smart Watches",
+    "price": 250,
+    "description": "Smartwatch with health tracking, GPS, and long battery life.",
+    "specification": ["GPS", "Heart rate monitor", "7-day battery life"],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 10,
+    "product_title": "Fitness Smartwatch Pro",
+    "product_image": "https://example.com/images/fitness-smartwatch.jpg",
+    "category": "Smart Watches",
+    "price": 180,
+    "description": "Advanced smartwatch for fitness tracking with multiple sports modes.",
+    "specification": [
+      "Heart rate monitor",
+      "Sleep tracking",
+      "5-day battery life"
+    ],
+    "availability": false,
+    "rating": 4.3
+  }
+]
