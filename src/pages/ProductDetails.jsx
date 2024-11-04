@@ -4,7 +4,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-stars";
 import { BsCart3 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
-import { addCartToLs } from "../Utilities/LocalStorage";
+import { addCartToLs, addWishToLs } from "../Utilities/LocalStorage";
 import { toast } from "react-toastify";
 
 export default function ProductDetails() {
@@ -31,6 +31,9 @@ export default function ProductDetails() {
 
   const handleCartBtn = (id) => {
     addCartToLs(id);
+  };
+  const handleWishBtn = (id) => {
+    addWishToLs(id);
   };
 
   return (
@@ -85,7 +88,10 @@ export default function ProductDetails() {
             >
               Add to Cart <BsCart3 size={20}></BsCart3>
             </button>
-            <button className="border-2 rounded-full p-3">
+            <button
+              onClick={() => handleWishBtn(product_id)}
+              className="border-2 rounded-full p-3"
+            >
               <CiHeart size={20}></CiHeart>
             </button>
           </div>

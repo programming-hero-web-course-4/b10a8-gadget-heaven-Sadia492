@@ -1,9 +1,43 @@
-import React from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLoaderData, useLocation } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
+import { getCartFromLs, getWishFromLs } from "../Utilities/LocalStorage";
 
 export default function Navbar() {
+  const [cart, setCart] = useState([]);
+  const [wishList, setWishList] = useState([]);
+  const [totalCost, setTotalCost] = useState(0);
+  const data = useLoaderData();
+
+  useEffect(() => {
+    if (data.length) {
+      const selectedItem = getCartFromLs();
+      const selectedWish = getWishFromLs();
+      const savedCart = [];
+      const savedWish = [];
+      for (const id of selectedItem) {
+        const product = data.find(
+          (singleProduct) => singleProduct.product_id === id
+        );
+        savedCart.push(product);
+      }
+      for (const id of selectedWish) {
+        const product = data.find(
+          (singleProduct) => singleProduct.product_id === id
+        );
+        savedWish.push(product);
+      }
+      setCart(savedCart);
+      setWishList(savedWish);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    const total = cart.reduce((prev, curr) => prev + curr.price, 0);
+    setTotalCost(total);
+  }, [cart]);
+
   const links = (
     <>
       <NavLink to="/">
@@ -21,6 +55,12 @@ export default function Navbar() {
   );
 
   const { pathname } = useLocation();
+  // const [cart, setCart] = useState([]);
+  // useEffect(() => {
+  //   const cart = getCartFromLs();
+  //   setCart(cart);
+  // }, []);
+  // console.log(cart);
 
   return (
     <div className={` ${pathname === "/" ? "pt-6" : ""}`}>
@@ -74,7 +114,9 @@ export default function Navbar() {
                 <div tabIndex={0} role="button" className="">
                   <div className="indicator font-bold p-4 border-2 text-black rounded-full text-xl bg-white hover:bg-white">
                     <BsCart3></BsCart3>
-                    <span className="badge badge-sm indicator-item">8</span>
+                    <span className="badge badge-sm indicator-item">
+                      {cart.length}
+                    </span>
                   </div>
                 </div>
                 <div
@@ -82,8 +124,10 @@ export default function Navbar() {
                   className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow"
                 >
                   <div className="card-body">
-                    <span className="text-lg font-bold">8 Items</span>
-                    <span className="text-info">Subtotal: $999</span>
+                    <span className="text-lg font-bold">
+                      {cart.length} Items
+                    </span>
+                    <span className="text-info">Subtotal: ${totalCost}</span>
                     <div className="card-actions">
                       <button className="btn btn-primary btn-block">
                         View cart
@@ -95,7 +139,9 @@ export default function Navbar() {
               <Link>
                 <div className="indicator border-2 rounded-full text-black font-bold text-xl bg-white p-4">
                   <CiHeart></CiHeart>
-                  <span className="badge badge-sm indicator-item">8</span>
+                  <span className="badge badge-sm indicator-item">
+                    {wishList.length}
+                  </span>
                 </div>
               </Link>
             </div>

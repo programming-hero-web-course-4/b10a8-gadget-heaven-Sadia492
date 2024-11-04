@@ -1,27 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getCartFromLs } from "../Utilities/LocalStorage";
+import { getCartFromLs, getWishFromLs } from "../Utilities/LocalStorage";
 import Heading from "../components/Heading";
 import Cart from "../components/Cart";
 import WishList from "../components/WishList";
+import Modal from "../components/Modal";
 
 export default function Dashboard() {
   const [isActive, setIsActive] = useState(true);
   const [cart, setCart] = useState([]);
+  const [wishList, setWishList] = useState([]);
   const data = useLoaderData();
+  const [totalCost, setTotalCost] = useState(0);
+  const [storedPrice, setStoredPrice] = useState(0);
+
   useEffect(() => {
     if (data.length) {
       const selectedItem = getCartFromLs();
+      const selectedWish = getWishFromLs();
       const savedCart = [];
+      const savedWish = [];
       for (const id of selectedItem) {
         const product = data.find(
           (singleProduct) => singleProduct.product_id === id
         );
         savedCart.push(product);
       }
+      for (const id of selectedWish) {
+        const product = data.find(
+          (singleProduct) => singleProduct.product_id === id
+        );
+        savedWish.push(product);
+      }
       setCart(savedCart);
+      setWishList(savedWish);
     }
   }, [data]);
+  // console.log(wishList);
 
   const handleDashboard = (type) => {
     if (type === "cart") {
@@ -31,6 +46,23 @@ export default function Dashboard() {
     }
   };
 
+  const handleSortBtn = () => {
+    const sortedCart = [...cart].sort((a, b) => b.price - a.price);
+    setCart(sortedCart);
+  };
+
+  useEffect(() => {
+    const total = cart.reduce((prev, curr) => prev + curr.price, 0);
+    setTotalCost(total);
+  }, [cart]);
+
+  const handlePurchaseBtn = () => {
+    setStoredPrice(totalCost);
+    my_modal_1.showModal();
+    setTotalCost(0);
+    setCart([]);
+    localStorage.removeItem("cart");
+  };
   return (
     <div>
       <div className="bg-primary pb-8">
@@ -53,7 +85,19 @@ export default function Dashboard() {
           </button>
         </div>
       </div>
-      <div>{isActive ? <Cart cart={cart}></Cart> : <WishList></WishList>}</div>
+      <div>
+        {isActive ? (
+          <Cart
+            cart={cart}
+            handlePurchaseBtn={handlePurchaseBtn}
+            totalCost={totalCost}
+            handleSortBtn={handleSortBtn}
+          ></Cart>
+        ) : (
+          <WishList wishList={wishList}></WishList>
+        )}
+      </div>
+      <Modal storedPrice={storedPrice}></Modal>
     </div>
   );
 }

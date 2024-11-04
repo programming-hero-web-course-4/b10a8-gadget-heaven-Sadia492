@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 
-export default function Cart({ cart }) {
-  const [totalCost, setTotalCost] = useState(0);
-  useEffect(() => {
-    const total = cart.reduce((prev, curr) => prev + curr.price, 0);
-    setTotalCost(total);
-  }, []);
+export default function Cart({
+  cart,
+  handleSortBtn,
+  handlePurchaseBtn,
+  totalCost,
+}) {
   return (
     <div className="w-4/5 mx-auto">
       <div className="flex justify-between items-center mt-8 mb-6">
         <h2 className="font-bold text-2xl">Cart</h2>
         <div className="flex  justify-center gap-4 items-center">
           <h2 className="font-bold text-2xl">
-            Total Cost: {totalCost.toFixed(2)}{" "}
+            Total Cost: {totalCost.toFixed(2)}
           </h2>
-          <button className="flex justify-center p-3 text-primary border-2 border-primary rounded-full">
+          <button
+            onClick={handleSortBtn}
+            className="flex justify-center p-3 text-primary border-2 border-primary rounded-full"
+          >
             Sort by Price
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +34,10 @@ export default function Cart({ cart }) {
               />
             </svg>
           </button>
-          <button className="bg-primary rounded-full shadow-[0_4px_50px_0px_rgba(11,11,11,0.15)] w-28 h-12 text-white">
+          <button
+            onClick={handlePurchaseBtn}
+            className="bg-primary rounded-full shadow-[0_4px_50px_0px_rgba(11,11,11,0.15)] w-28 h-12 text-white"
+          >
             Purchase
           </button>
         </div>
