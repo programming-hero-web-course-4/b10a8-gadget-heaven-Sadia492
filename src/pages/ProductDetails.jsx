@@ -4,6 +4,8 @@ import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-stars";
 import { BsCart3 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
+import { addCartToLs } from "../Utilities/LocalStorage";
+import { toast } from "react-toastify";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
@@ -26,6 +28,10 @@ export default function ProductDetails() {
     rating,
     specification,
   } = product;
+
+  const handleCartBtn = (id) => {
+    addCartToLs(id);
+  };
 
   return (
     <div>
@@ -73,7 +79,10 @@ export default function ProductDetails() {
             </div>
           </div>
           <div className="flex gap-3">
-            <button className="flex justify-center items-center gap-1 bg-primary text-white rounded-full py-2 px-3">
+            <button
+              onClick={() => handleCartBtn(product_id)}
+              className="flex justify-center items-center gap-1 bg-primary text-white rounded-full py-2 px-3"
+            >
               Add to Cart <BsCart3 size={20}></BsCart3>
             </button>
             <button className="border-2 rounded-full p-3">

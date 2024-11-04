@@ -16,7 +16,6 @@ export default function Products() {
       setProducts(data);
     }
   }, [data, category]);
-  console.log(products);
 
   return (
     <div className="lg:col-span-4 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-6">
