@@ -23,10 +23,12 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   return (
-    <div className="pt-6">
+    <div className={` ${pathname === "/" ? "pt-6" : ""}`}>
       <div
-        className={`w-[95%] rounded-t-3xl  mx-auto ${
-          pathname === "/" ? "bg-primary  text-white" : "bg-white text-black"
+        className={` ${
+          pathname === "/"
+            ? "bg-primary w-[95%]  rounded-t-3xl mx-auto text-white"
+            : "bg-white text-black"
         }`}
       >
         <div className="navbar bg-transparent bg-base-100 w-4/5 mx-auto">
@@ -66,29 +68,12 @@ export default function Navbar() {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal gap-6 px-1">{links}</ul>
           </div>
-          <div className="navbar-end ">
+          <div className="navbar-end items-center ">
             <div className="flex gap-3">
-              <div className="dropdown dropdown-end text-black  ">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle border-2 text-black rounded-full text-xl bg-white hover:bg-white"
-                >
-                  <div className="indicator">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-7 w-7"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
+              <div className="dropdown dropdown-end text-black ">
+                <div tabIndex={0} role="button" className="">
+                  <div className="indicator font-bold p-4 border-2 text-black rounded-full text-xl bg-white hover:bg-white">
+                    <BsCart3></BsCart3>
                     <span className="badge badge-sm indicator-item">8</span>
                   </div>
                 </div>
@@ -108,8 +93,9 @@ export default function Navbar() {
                 </div>
               </div>
               <Link>
-                <div className="border-2 rounded-full text-black font-bold text-xl bg-white p-3 ">
-                  <CiHeart className="font-bold" size={20}></CiHeart>
+                <div className="indicator border-2 rounded-full text-black font-bold text-xl bg-white p-4">
+                  <CiHeart></CiHeart>
+                  <span className="badge badge-sm indicator-item">8</span>
                 </div>
               </Link>
             </div>

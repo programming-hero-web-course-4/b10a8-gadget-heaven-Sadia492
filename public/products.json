@@ -8,7 +8,7 @@
     "description": "High-performance laptop with long battery life, ideal for work and play.",
     "specification": ["16GB RAM", "512GB SSD", "Intel i7 Processor"],
     "availability": true,
-    "rating": 4.8
+    "rating": 5
   },
   {
     "product_id": 2,
@@ -19,7 +19,7 @@
     "description": "Powerful gaming desktop with advanced graphics and cooling system.",
     "specification": ["32GB RAM", "1TB SSD", "NVIDIA RTX 3070"],
     "availability": true,
-    "rating": 4.9
+    "rating": 3.9
   },
   {
     "product_id": 3,
@@ -41,7 +41,7 @@
     "description": "Space-saving all-in-one desktop with powerful performance.",
     "specification": ["16GB RAM", "1TB HDD", "Intel i5 Processor"],
     "availability": false,
-    "rating": 4.5
+    "rating": 3.5
   },
   {
     "product_id": 5,
@@ -52,7 +52,7 @@
     "description": "High-end workstation for professionals requiring top performance.",
     "specification": ["32GB RAM", "1TB SSD", "AMD Ryzen 9 Processor"],
     "availability": true,
-    "rating": 4.7
+    "rating": 2.7
   },
   {
     "product_id": 6,
@@ -63,7 +63,7 @@
     "description": "Compact mini PC with powerful capabilities for everyday tasks.",
     "specification": ["8GB RAM", "256GB SSD", "Intel i3 Processor"],
     "availability": true,
-    "rating": 4.3
+    "rating": 3.3
   },
   {
     "product_id": 7,
@@ -74,7 +74,7 @@
     "description": "Feature-rich smartwatch with health and fitness tracking.",
     "specification": ["Heart Rate Monitor", "GPS", "Water Resistant"],
     "availability": true,
-    "rating": 4.6
+    "rating": 5
   },
   {
     "product_id": 8,
@@ -107,7 +107,7 @@
     "description": "Portable power bank with compact design for easy carrying.",
     "specification": ["10,000mAh", "Type-C and USB-A Ports", "LED Indicator"],
     "availability": true,
-    "rating": 4.3
+    "rating": 3.3
   },
   {
     "product_id": 11,
