@@ -19,7 +19,7 @@ export default function Products() {
   console.log(products);
 
   return (
-    <div className="col-span-4 grid grid-cols-3 gap-6">
+    <div className="lg:col-span-4 grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-6">
       {products.map((product) => (
         <Product key={product.product_id} product={product}></Product>
       ))}

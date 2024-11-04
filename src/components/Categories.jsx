@@ -7,24 +7,29 @@ export default function Categories({ categories }) {
     navigate("/");
   };
   return (
-    <div className="col-span-1 bg-white grid grid-cols-1 gap-4 w-full rounded-xl place-items-center content-start">
-      <NavLink>
-        <p>
-          <button
-            onClick={() => handleAll()}
-            className="bg-[#09080F0D] w-40 btn flex justify-start rounded-full"
-          >
-            All Product
-          </button>
-        </p>
+    <div className="col-span-1 flex flex-wrap items-center justify-center bg-white lg:grid grid-cols-1 gap-4 w-full rounded-xl place-items-center content-start p-6 lg:h-96">
+      <NavLink
+        to="/"
+        onClick={handleAll}
+        className={({ isActive }) =>
+          `w-40 flex justify-start rounded-full p-3 btn ${
+            isActive ? "bg-primary text-white" : "bg-[#09080F0D] text-black"
+          }`
+        }
+      >
+        All Products
       </NavLink>
       {categories.map((category) => (
-        <NavLink to={`/category/${category.category_name}`} key={category.id}>
-          <p>
-            <button className="bg-[#09080F0D] w-40 btn flex justify-start rounded-full">
-              {category.category_name}
-            </button>
-          </p>
+        <NavLink
+          to={`/category/${category.category_name}`}
+          key={category.id}
+          className={({ isActive }) =>
+            `w-40 flex justify-start rounded-full p-3 btn ${
+              isActive ? "bg-primary text-white" : "bg-[#09080F0D] text-black"
+            }`
+          }
+        >
+          {category.category_name}
         </NavLink>
       ))}
     </div>

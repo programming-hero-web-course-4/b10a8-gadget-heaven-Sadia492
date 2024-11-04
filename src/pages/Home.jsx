@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div>
       <Banner></Banner>
-      <div className="bg-[#09080F0D]">
-        <div className="grid grid-cols-5 w-4/5 mx-auto gap-6">
+      <div className="">
+        <div className="grid grid-cols-1 lg:grid-cols-5 w-4/5 mx-auto gap-6">
           <Categories categories={categories}></Categories>
           <Outlet></Outlet>
         </div>
