@@ -1,19 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Product({ product }) {
+  const {
+    product_title,
+    product_id,
+    product_image,
+    category,
+    price,
+    description,
+    availability,
+    rating,
+    specification,
+  } = product;
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
+      <figure className="p-4">
+        <img className="rounded-xl" src={product_image} alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+        <h2 className="card-title">{product_title}</h2>
+        <p className="text-lg font-medium text-gray-400">Price: {price}k</p>
+        <div className="card-actions justify-start">
+          <Link to={`/product/${product_id}`}>
+            <button className="btn rounded-full text-primary btn-outline border-primary hover:bg-primary hover:border-primary">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
