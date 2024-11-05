@@ -1,10 +1,8 @@
 # Gadget Heaven
 
-Explore a responsive and user-friendly gadget-buying platform with seamless navigation and a range of essential features for gadget enthusiasts.
+### [Live Website](https://gadget-heaven-project1.netlify.app/)
 
-### 📌 [Live Website](https://gadget-heaven-project1.netlify.app/)
-
-### 📄 [Requirement Document](https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf)
+### [Requirement Document](https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf)
 
 ---
 
@@ -25,7 +23,7 @@ Explore a responsive and user-friendly gadget-buying platform with seamless navi
 
 ---
 
-## 🌟 Main Features
+## Main Features
 
 1. **Browse by Category**: Discover products organized by categories.
 2. **Detailed Product Views**: Access full product details on demand.
