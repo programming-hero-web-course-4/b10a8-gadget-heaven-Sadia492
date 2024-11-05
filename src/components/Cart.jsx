@@ -7,6 +7,12 @@ import { toast } from "react-toastify";
 export default function Cart({ handleSortBtn }) {
   const { setCart, cart, totalCost, storedPrice, handlePurchase } =
     useContext(AppContext);
+  const [isEmpty, setIsEmpty] = useState(false);
+  useEffect(() => {
+    if (!totalCost) {
+      setIsEmpty(true);
+    }
+  }, []);
 
   const handleRemoveFromCart = (id) => {
     removeFromLS(id);
@@ -46,8 +52,9 @@ export default function Cart({ handleSortBtn }) {
             </svg>
           </button>
           <button
+            disabled={isEmpty}
             onClick={handlePurchase}
-            className="bg-primary rounded-full shadow-[0_4px_50px_0px_rgba(11,11,11,0.15)] w-28 h-12 text-white"
+            className="bg-primary rounded-full disabled:bg-slate-400 shadow-[0_4px_50px_0px_rgba(11,11,11,0.15)] w-28 h-12 text-white"
           >
             Purchase
           </button>
