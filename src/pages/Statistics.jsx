@@ -16,6 +16,9 @@ import Heading from "../components/Heading";
 
 export default function Statistics() {
   const products = useLoaderData();
+  useEffect(() => {
+    document.title = "Statistics | Gadget Heaven";
+  }, []);
   return (
     <div>
       <Heading
