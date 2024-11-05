@@ -24,7 +24,7 @@ export default function Cart({ handleSortBtn }) {
   };
 
   return (
-    <div className="w-4/5 mx-auto">
+    <div className="w-11/12 lg:w-4/5 mx-auto">
       <div className="flex justify-between items-center mt-8 mb-6">
         <h2 className="font-bold text-2xl">Cart</h2>
         <div className="flex  justify-center gap-4 items-center">
@@ -63,13 +63,13 @@ export default function Cart({ handleSortBtn }) {
       <div className="space-y-6">
         {cart.map((single) => (
           <div
-            className="grid lg:grid-cols-6 bg-white p-6 gap-8 rounded-2xl"
+            className="grid lg:grid-cols-6 grid-cols-1 bg-white p-6 gap-8 rounded-2xl"
             key={single.product_id}
           >
             <div>
               <img src={single.product_image} alt="" />
             </div>
-            <div className=" col-span-5 flex justify-between">
+            <div className=" lg:col-span-5 flex justify-between">
               <div className="space-y-4">
                 <h2 className="font-semibold text-2xl">
                   {single.product_title}

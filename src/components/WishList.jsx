@@ -17,18 +17,18 @@ export default function WishList() {
   };
 
   return (
-    <div className="w-4/5 mx-auto">
+    <div className="w-11/12 lg:w-4/5 mx-auto">
       <h2 className="font-bold text-2xl mt-8 mb-6 ">WishList</h2>
       <div className="space-y-6">
         {wishList.map((single) => (
           <div
-            className="grid lg:grid-cols-6 bg-white p-6 gap-8 rounded-2xl"
+            className="grid grid-cols-1 lg:grid-cols-6 bg-white p-6 gap-8 rounded-2xl"
             key={single.product_id}
           >
             <div>
               <img src={single.product_image} alt="" />
             </div>
-            <div className=" col-span-5 flex justify-between">
+            <div className="lg:col-span-5 flex justify-between">
               <div className="space-y-4">
                 <h2 className="font-semibold text-2xl">
                   {single.product_title}

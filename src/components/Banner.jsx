@@ -7,7 +7,7 @@ export default function Banner() {
   return (
     <div className=" relative">
       <div className="bg-primary text-white w-[95%] mx-auto flex flex-col text-center justify-center space-y-6 items-center pt-12 rounded-b-3xl pb-48">
-        <h1 className="font-bold text-5xl lg:w-3/4">
+        <h1 className="font-bold text-3xl lg:text-5xl lg:w-3/4">
           Upgrade Your Tech Accessorize with Gadget Heaven Accessories
         </h1>
         <p className="lg:w-3/5">

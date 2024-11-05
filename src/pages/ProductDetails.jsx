@@ -70,11 +70,11 @@ export default function ProductDetails() {
           subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
         ></Heading>
       </div>
-      <div className="grid grid-cols-3 p-8 w-4/5 bg-white mx-auto gap-8 rounded-3xl relative -top-48">
+      <div className="grid grid-cols-1 lg:grid-cols-3 p-8 w-11/12 lg:w-4/5 bg-white mx-auto gap-8 rounded-3xl relative -top-48">
         <div className="col-span-1 h-full flex justify-center items-center w-full">
           <img className="w-full" src={product_image} alt="" />
         </div>
-        <div className="col-span-2 space-y-4">
+        <div className="lg:col-span-2 space-y-4">
           <h2 className="font-semibold text-3xl">{product_title}</h2>
           <p className="font-semibold text-xl">Price: ${price}</p>
           <button className="bg-[#309C081A] text-green-700 border-2 rounded-full border-green-700 p-2">

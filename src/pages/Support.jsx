@@ -22,7 +22,7 @@ export default function Support() {
           subtitle="At GadgetHaven, we are committed to providing exceptional customer support. If you have any questions or need assistance, our dedicated team is here to help you 24/7!"
         ></Heading>
       </div>
-      <div className="w-4/5 mx-auto">
+      <div className="lg:w-4/5 w-11/12 mx-auto">
         {/* for faq section */}
 
         <div className="relative -top-36 border-2 backdrop-blur-2xl bg-white/20 p-6 rounded-2xl">

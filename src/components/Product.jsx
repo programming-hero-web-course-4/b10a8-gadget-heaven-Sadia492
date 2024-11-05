@@ -15,8 +15,8 @@ export default function Product({ product }) {
   } = product;
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
-      <figure className="p-4">
-        <img className="rounded-xl" src={product_image} alt="Shoes" />
+      <figure className="p-4 w-full">
+        <img className="rounded-xl h-44" src={product_image} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{product_title}</h2>

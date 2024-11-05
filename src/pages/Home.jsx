@@ -13,7 +13,10 @@ export default function Home() {
     <div>
       <Banner></Banner>
       <div>
-        <div className="grid grid-cols-1 lg:grid-cols-5 w-4/5 mx-auto gap-6">
+        <h2 className="font-bold text-center text-4xl mb-12">
+          Explore Cutting-Edge Gadgets
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-5 w-11/12 lg:w-4/5 mx-auto gap-6">
           <Categories categories={categories}></Categories>
           <Outlet></Outlet>
         </div>
