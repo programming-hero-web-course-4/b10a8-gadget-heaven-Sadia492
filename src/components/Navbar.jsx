@@ -62,7 +62,7 @@ export default function Navbar() {
       <div
         className={` ${
           pathname === "/"
-            ? "bg-primary w-[95%]  rounded-t-3xl mx-auto text-white"
+            ? "bg-primary w-[95%]  rounded-t-3xl mx-auto"
             : "bg-white text-black"
         }`}
       >
@@ -76,7 +76,7 @@ export default function Navbar() {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className={`h-5 w-5 ${pathname === "/" ? "text-white" : ""}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -96,12 +96,23 @@ export default function Navbar() {
                 {links}
               </ul>
             </div>
-            <Link to="/" className="btn btn-ghost text-xl">
+            <Link
+              to="/"
+              className={`btn btn-ghost  text-xl ${
+                pathname === "/" ? "text-white" : ""
+              }`}
+            >
               Gadget Heaven
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal gap-6 px-1">{links}</ul>
+            <ul
+              className={`menu menu-horizontal gap-6 px-1 ${
+                pathname === "/" ? "text-white" : ""
+              }`}
+            >
+              {links}
+            </ul>
           </div>
           <div className="navbar-end items-center ">
             <div className="flex gap-3">
