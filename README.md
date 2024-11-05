@@ -2,7 +2,7 @@
 
 ### [Live Website](https://gadget-heaven-project1.netlify.app/)
 
-### [Requirement Document](https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf)
+### [Requirement Document](https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/9b9fc639c2a0f9f4fe3b8139cd18c909d177f07a/Batch-10_Assignment-08.pdf)
 
 ---
 
