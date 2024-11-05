@@ -7,7 +7,7 @@ export default function Categories({ categories }) {
     navigate("/");
   };
   return (
-    <div className="col-span-1 flex flex-wrap items-center justify-center bg-white lg:grid grid-cols-1 gap-4 w-full rounded-xl place-items-center content-start p-6 lg:h-96">
+    <div className="col-span-1 flex flex-wrap items-center justify-center bg-white lg:grid grid-cols-1 gap-4 w-full rounded-xl place-items-center content-start p-6 h-fit">
       <NavLink
         to="/"
         onClick={handleAll}

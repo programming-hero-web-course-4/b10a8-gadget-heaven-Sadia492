@@ -4,6 +4,11 @@ import Heading from "../components/Heading";
 export default function Support() {
   const handleForm = (e) => {
     e.preventDefault();
+    e.target.name.value = "";
+    e.target.email.value = "";
+    e.target.subject.value = "";
+    e.target.area.value = "";
+    e.target.number.value = "";
   };
   useEffect(() => {
     document.title = "Support | Gadget Heaven";
@@ -92,45 +97,49 @@ export default function Support() {
             Have A Question?
           </h3>
           <form
-            onSubmit={() => handleForm()}
+            onSubmit={handleForm}
             className="grid grid-cols-1 lg:grid-cols-2 gap-4"
           >
             <input
               type="text"
+              name="name"
               className="p-4 rounded-full placeholder-primary/85"
               placeholder="Name"
               required
             />
             <input
               type="email"
+              name="email"
               className="p-4 rounded-full placeholder-primary/85"
               placeholder="Email"
               required
             />
             <input
               type="number"
+              name="number"
               className="p-4 rounded-full placeholder-primary/85"
               placeholder="Phone"
               required
             />
             <input
               type="text"
+              name="subject"
               className="p-4 rounded-full placeholder-primary/85"
               placeholder="Subject"
               required
             />
             <textarea
+              name="area"
               className="p-4 rounded-2xl lg:col-span-2  placeholder-primary/85"
               placeholder="Your Message"
               rows={5}
               required
             ></textarea>
-            <button
-              className="lg:col-span-2 text-white bg-primary py-4 px-8 rounded-2xl w-fit mx-auto"
+            <input
               type="submit"
-            >
-              Send Message
-            </button>
+              className="lg:col-span-2 text-white bg-primary py-4 px-8 rounded-2xl w-fit mx-auto"
+              value="Send Message"
+            />
           </form>
         </div>
       </div>

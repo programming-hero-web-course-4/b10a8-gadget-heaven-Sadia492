@@ -11,7 +11,9 @@ export default function WishList() {
       (product) => product.product_id !== id
     );
     setWishList(remainingWish);
-    toast.success("At last finished");
+    toast.error("Item Removed from Wish-list", {
+      position: "top-center",
+    });
   };
 
   return (

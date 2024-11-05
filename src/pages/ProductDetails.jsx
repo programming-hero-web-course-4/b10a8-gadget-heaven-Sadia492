@@ -15,12 +15,21 @@ import { AppContext } from "../Utilities/AppContext";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
+  const [isClicked, setIsClicked] = useState(false);
   const data = useLoaderData();
   const { id } = useParams();
 
   useEffect(() => {
     const singleProduct = data.find((single) => single.product_id == id);
     setProduct(singleProduct);
+
+    const wishList = getWishFromLs();
+    const isExist = wishList.find(
+      (product) => product.product_id == singleProduct.product_id
+    );
+    if (isExist) {
+      setIsClicked(true);
+    }
   }, [data, id]);
 
   useEffect(() => {
@@ -49,8 +58,8 @@ export default function ProductDetails() {
 
   const handleWishBtn = (product) => {
     addWishToLs(product);
-
     addToWishList(product);
+    setIsClicked(true);
   };
 
   return (
@@ -106,8 +115,9 @@ export default function ProductDetails() {
               Add to Cart <BsCart3 size={20}></BsCart3>
             </button>
             <button
+              disabled={isClicked}
               onClick={() => handleWishBtn(product)}
-              className="border-2 rounded-full p-3"
+              className="border-2 rounded-full p-3  disabled:bg-gray-400"
             >
               <CiHeart size={20}></CiHeart>
             </button>

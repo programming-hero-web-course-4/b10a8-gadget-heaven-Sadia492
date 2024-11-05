@@ -13,7 +13,9 @@ const addCartToLs = (product) => {
 
   cart.push(product);
   saveCartToLs(cart);
-  toast.success("Cart Added");
+  toast.success("Item Successfully Added to Cart", {
+    position: "top-center",
+  });
 };
 
 const saveCartToLs = (cart) => {
@@ -26,6 +28,7 @@ const removeFromLS = (id) => {
   saveCartToLs(remaining);
 };
 
+// for wishlist
 const getWishFromLs = () => {
   const storedWish = localStorage.getItem("wishlist");
   if (storedWish) {
@@ -39,7 +42,9 @@ const addWishToLs = (product) => {
 
   wishlist.push(product);
   saveWishToLs(wishlist);
-  toast.success("Wish Added");
+  toast.success("Item Successfully Added to Wish-list", {
+    position: "top-center",
+  });
 };
 
 const saveWishToLs = (wish) => {

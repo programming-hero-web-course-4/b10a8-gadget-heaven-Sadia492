@@ -1,7 +1,9 @@
 import React from "react";
 import BannerImg from "../assets/banner.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Banner() {
+  const navigate = useNavigate();
   return (
     <div className=" relative">
       <div className="bg-primary text-white w-[95%] mx-auto flex flex-col text-center justify-center space-y-6 items-center pt-12 rounded-b-3xl pb-48">
@@ -13,7 +15,10 @@ export default function Banner() {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
         <div>
-          <button className="bg-white py-4 px-7 text-primary rounded-full">
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="bg-white py-4 px-7 text-primary rounded-full"
+          >
             Shop Now
           </button>
         </div>

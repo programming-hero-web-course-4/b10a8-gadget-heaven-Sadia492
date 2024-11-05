@@ -2,30 +2,19 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { AppContext } from "../Utilities/AppContext";
 import Modal from "./Modal";
 import { removeFromLS } from "../Utilities/LocalStorage";
+import { toast } from "react-toastify";
 
 export default function Cart({ handleSortBtn }) {
   const { setCart, cart, totalCost, storedPrice, handlePurchase } =
     useContext(AppContext);
-  console.log(storedPrice);
-  //   const [storedPrice, setStoredPrice] = useState(0);
-
-  //   const handlePurchaseBtn = () => {
-  //     setStoredPrice(totalCost); // Set the stored price to the current total cost
-  //     setCart([]); // Clear the cart immediately after setting stored price
-  //     localStorage.removeItem("cart"); // Clear cart data from local storage
-  //   };
-
-  // Show the modal only after `storedPrice` is updated
-  //   useEffect(() => {
-  //     if (storedPrice > 0) {
-  //       my_modal_1.showModal(); // Only show the modal once storedPrice is updated
-  //     }
-  //   }, [storedPrice]);
 
   const handleRemoveFromCart = (id) => {
     removeFromLS(id);
     const remainingCart = cart.filter((product) => product.product_id !== id);
     setCart(remainingCart);
+    toast.error("Item Removed from Cart", {
+      position: "top-center",
+    });
   };
 
   return (
