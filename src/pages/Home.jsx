@@ -5,6 +5,9 @@ import { Outlet, useLoaderData } from "react-router-dom";
 
 export default function Home() {
   const categories = useLoaderData();
+  useEffect(() => {
+    document.title = "Gadgets | Gadget Heaven";
+  }, []);
 
   return (
     <div>

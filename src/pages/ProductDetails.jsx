@@ -23,6 +23,10 @@ export default function ProductDetails() {
     setProduct(singleProduct);
   }, [data, id]);
 
+  useEffect(() => {
+    document.title = "Details | Gadget Heaven";
+  }, []);
+
   const {
     product_title,
     product_id,

@@ -13,14 +13,6 @@ export default function Modal() {
     useContext(AppContext);
   console.log(storedPrice);
 
-  // const { addToCart, cart, setCart, totalCost } = useContext(AppContext);
-
-  // useEffect(() => {
-  //   setStoredPrice(totalCost);
-  // }, [totalCost]);
-
-  // console.log(storedPrice);
-
   return (
     <div>
       {/* Open the modal using document.getElementById('ID').showModal() method */}

@@ -19,6 +19,13 @@ const addCartToLs = (product) => {
 const saveCartToLs = (cart) => {
   localStorage.setItem("cart", JSON.stringify(cart));
 };
+
+const removeFromLS = (id) => {
+  const cart = getCartFromLs();
+  const remaining = cart.filter((product) => product.product_id !== id);
+  saveCartToLs(remaining);
+};
+
 const getWishFromLs = () => {
   const storedWish = localStorage.getItem("wishlist");
   if (storedWish) {
@@ -39,4 +46,17 @@ const saveWishToLs = (wish) => {
   localStorage.setItem("wishlist", JSON.stringify(wish));
 };
 
-export { getCartFromLs, addCartToLs, getWishFromLs, addWishToLs };
+const removeFromWishList = (id) => {
+  const wish = getWishFromLs();
+  const remaining = wish.filter((product) => product.product_id !== id);
+  saveWishToLs(remaining);
+};
+
+export {
+  getCartFromLs,
+  addCartToLs,
+  getWishFromLs,
+  addWishToLs,
+  removeFromLS,
+  removeFromWishList,
+};

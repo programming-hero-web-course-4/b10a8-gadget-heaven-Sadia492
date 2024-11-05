@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div>
+    <div className="mt-8">
       <footer className="footer flex flex-col text-center justify-center items-center bg-white text-black border-t-2 p-10">
         <div className="flex flex-col justify-center items-center pt-8">
           <h2 className="text-center font-bold text-3xl">Gadget Heaven</h2>

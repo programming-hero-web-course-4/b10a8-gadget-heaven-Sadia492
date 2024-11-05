@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { AppContext } from "../Utilities/AppContext";
 import Modal from "./Modal";
+import { removeFromLS } from "../Utilities/LocalStorage";
 
 export default function Cart({ handleSortBtn }) {
   const { setCart, cart, totalCost, storedPrice, handlePurchase } =
@@ -20,6 +21,13 @@ export default function Cart({ handleSortBtn }) {
   //       my_modal_1.showModal(); // Only show the modal once storedPrice is updated
   //     }
   //   }, [storedPrice]);
+
+  const handleRemoveFromCart = (id) => {
+    removeFromLS(id);
+    const remainingCart = cart.filter((product) => product.product_id !== id);
+    setCart(remainingCart);
+  };
+
   return (
     <div className="w-4/5 mx-auto">
       <div className="flex justify-between items-center mt-8 mb-6">
@@ -76,7 +84,10 @@ export default function Cart({ handleSortBtn }) {
                 </h5>
               </div>
               <div className="">
-                <button className="border-2 h-10 w-10 flex justify-center items-center text-red-500 border-red-500 rounded-full">
+                <button
+                  onClick={() => handleRemoveFromCart(single.product_id)}
+                  className="border-2 h-10 w-10 flex justify-center items-center text-red-500 border-red-500 rounded-full"
+                >
                   X
                 </button>
               </div>

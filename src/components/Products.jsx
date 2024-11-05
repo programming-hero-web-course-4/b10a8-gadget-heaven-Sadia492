@@ -8,6 +8,14 @@ export default function Products() {
   const { category } = useParams();
   useEffect(() => {
     if (category) {
+      document.title = `${category} | Gadget Heaven`;
+    } else {
+      document.title = "All Products | Gadget Heaven";
+    }
+  }, [category]);
+
+  useEffect(() => {
+    if (category) {
       const filteredProducts = data.filter(
         (product) => product.category == category
       );

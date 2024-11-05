@@ -8,23 +8,46 @@ import { AppContext } from "../Utilities/AppContext";
 export default function Navbar() {
   const links = (
     <>
-      <NavLink to="/">
+      <NavLink
+        className={({ isActive }) =>
+          `py-2 px-4 ${isActive ? "bg-black text-white rounded-lg" : ""}`
+        }
+        to="/"
+      >
         <li>Home</li>
       </NavLink>
 
-      <NavLink to="/statistics">
+      <NavLink
+        className={({ isActive }) =>
+          `py-2 px-4 ${isActive ? "bg-black text-white rounded-lg" : ""}`
+        }
+        to="/statistics"
+      >
         <li>Statistics</li>
       </NavLink>
 
-      <NavLink to="/dashboard">
+      <NavLink
+        className={({ isActive }) =>
+          `py-2 px-4 ${isActive ? "bg-black text-white rounded-lg" : ""}`
+        }
+        to="/dashboard"
+      >
         <li>Dashboard</li>
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          `py-2 px-4 ${isActive ? "bg-black text-white rounded-lg" : ""}`
+        }
+        to="/support"
+      >
+        <li>Support</li>
       </NavLink>
     </>
   );
 
   const { pathname } = useLocation();
 
-  const { addToCart, cart, wishList } = useContext(AppContext);
+  const { addToCart, cart, wishList, totalCost } = useContext(AppContext);
 
   return (
     <div className={` ${pathname === "/" ? "pt-6" : ""}`}>
@@ -91,7 +114,7 @@ export default function Navbar() {
                     <span className="text-lg font-bold">
                       {cart.length} Items
                     </span>
-                    {/* <span className="text-info">Subtotal: ${totalCost}</span> */}
+                    <span className="text-info">Subtotal: ${totalCost}</span>
                     <div className="card-actions">
                       <button className="btn btn-primary btn-block">
                         View cart

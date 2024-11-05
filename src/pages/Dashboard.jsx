@@ -10,11 +10,11 @@ import { AppContext } from "../Utilities/AppContext";
 
 export default function Dashboard() {
   const [isActive, setIsActive] = useState(true);
-  // const [cart, setCart] = useState([]);
-  // const [wishList, setWishList] = useState([]);
+
   const data = useLoaderData();
-  // const [totalCost, setTotalCost] = useState(0);
-  // const [storedPrice, setStoredPrice] = useState(0);
+  useEffect(() => {
+    document.title = "Dashboard | Gadget Heaven";
+  }, []);
 
   const { addToCart, cart, setCart, totalCost } = useContext(AppContext);
 
@@ -30,16 +30,6 @@ export default function Dashboard() {
     const sortedCart = [...cart].sort((a, b) => b.price - a.price);
     setCart(sortedCart);
   };
-
-  // useEffect(() => {
-  //   const total = cart.reduce((prev, curr) => prev + curr.price, 0);
-  //   setTotalCost(total);
-  // }, [cart]);
-  // useEffect(() => {
-  //   setStoredPrice(totalCost);
-  // }, [totalCost]);
-
-  // console.log(storedPrice);
 
   return (
     <div>
