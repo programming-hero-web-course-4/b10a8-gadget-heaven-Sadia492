@@ -9,14 +9,11 @@ export default function Modal() {
     e.preventDefault();
   };
 
-  const { addToCart, cart, setCart, totalCost, storedPrice } =
-    useContext(AppContext);
+  const { storedPrice } = useContext(AppContext);
   console.log(storedPrice);
 
   return (
     <div>
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
-
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box flex justify-center items-center flex-col">
           <img src={ModalIcon} alt="" />

@@ -1,4 +1,3 @@
-// AppContext.js
 import React, { createContext, useEffect, useState } from "react";
 
 export const AppContext = createContext();
@@ -10,10 +9,10 @@ export const AppProvider = ({ children }) => {
   const [storedPrice, setStoredPrice] = useState(0);
 
   const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]); // Add product to the cart array
+    setCart((prevCart) => [...prevCart, product]);
   };
   const addToWishList = (product) => {
-    setWishList((prevCart) => [...prevCart, product]); // Add product to the cart array
+    setWishList((prevCart) => [...prevCart, product]);
   };
 
   useEffect(() => {
@@ -22,15 +21,15 @@ export const AppProvider = ({ children }) => {
   }, [cart]);
   useEffect(() => {
     if (totalCost) {
-      setStoredPrice(totalCost); // Store total cost
+      setStoredPrice(totalCost);
     }
   }, [totalCost]);
   const handlePurchase = () => {
-    setCart([]); // Clear cart
+    setCart([]);
     if (totalCost) {
       my_modal_1.showModal();
     }
-    localStorage.removeItem("cart"); // Clear from localStorage if needed
+    localStorage.removeItem("cart");
   };
 
   return (

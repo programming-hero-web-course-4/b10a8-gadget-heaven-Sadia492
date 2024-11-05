@@ -1,22 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getCartFromLs, getWishFromLs } from "../Utilities/LocalStorage";
 import Heading from "../components/Heading";
 import Cart from "../components/Cart";
 import WishList from "../components/WishList";
-import Modal from "../components/Modal";
 import { AppContext } from "../Utilities/AppContext";
-// import { AppContext } from "../Utilities/AppContext";
 
 export default function Dashboard() {
   const [isActive, setIsActive] = useState(true);
 
-  const data = useLoaderData();
   useEffect(() => {
     document.title = "Dashboard | Gadget Heaven";
   }, []);
 
-  const { addToCart, cart, setCart, totalCost } = useContext(AppContext);
+  const { cart, setCart } = useContext(AppContext);
 
   const handleDashboard = (type) => {
     if (type === "cart") {

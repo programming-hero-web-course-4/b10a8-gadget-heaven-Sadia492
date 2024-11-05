@@ -24,7 +24,7 @@ export default function Statistics() {
       ></Heading>
       <h2 className="font-bold text-2xl w-11/12 mx-auto py-8">Statistics</h2>
       <ResponsiveContainer
-        className="bg-white mx-auto"
+        className="bg-white mx-auto rounded-xl"
         width="90%"
         height={400}
       >
@@ -45,11 +45,11 @@ export default function Statistics() {
           <Area
             type="monotone"
             dataKey="price"
-            fill="#8884d8"
-            stroke="#8884d8"
+            fill="#efe1fb"
+            stroke="#efe1fb"
           />
-          <Bar dataKey="price" barSize={20} fill="#413ea0" />
-          {/* <Line type="monotone" dataKey="uv" stroke="#ff7300" /> */}
+          <Bar dataKey="price" barSize={30} fill="#9538E2" />
+
           <Scatter dataKey="rating" fill="red" />
         </ComposedChart>
       </ResponsiveContainer>

@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-
+// for cart
 const getCartFromLs = () => {
   const storedCart = localStorage.getItem("cart");
   if (storedCart) {

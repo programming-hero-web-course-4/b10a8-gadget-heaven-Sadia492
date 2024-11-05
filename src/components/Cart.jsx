@@ -61,10 +61,10 @@ export default function Cart({ handleSortBtn }) {
         </div>
       </div>
       <div className="space-y-6">
-        {cart.map((single) => (
+        {cart.map((single, i) => (
           <div
             className="grid lg:grid-cols-6 grid-cols-1 bg-white p-6 gap-8 rounded-2xl"
-            key={single.product_id}
+            key={i}
           >
             <div>
               <img src={single.product_image} alt="" />

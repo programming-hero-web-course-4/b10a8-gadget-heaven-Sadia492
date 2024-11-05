@@ -1,11 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink, useLoaderData, useLocation } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  useLoaderData,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { getCartFromLs, getWishFromLs } from "../Utilities/LocalStorage";
 import { AppContext } from "../Utilities/AppContext";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const links = (
     <>
       <NavLink
@@ -47,7 +55,7 @@ export default function Navbar() {
 
   const { pathname } = useLocation();
 
-  const { addToCart, cart, wishList, totalCost } = useContext(AppContext);
+  const { cart, wishList, totalCost } = useContext(AppContext);
 
   return (
     <div className={` ${pathname === "/" ? "pt-6" : ""}`}>
@@ -116,8 +124,11 @@ export default function Navbar() {
                     </span>
                     <span className="text-info">Subtotal: ${totalCost}</span>
                     <div className="card-actions">
-                      <button className="btn btn-primary btn-block">
-                        View cart
+                      <button
+                        onClick={() => navigate("/dashboard")}
+                        className="btn btn-primary btn-block"
+                      >
+                        Dashboard
                       </button>
                     </div>
                   </div>

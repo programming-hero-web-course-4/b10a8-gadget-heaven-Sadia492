@@ -8,8 +8,7 @@ import { getCartFromLs, getWishFromLs } from "../Utilities/LocalStorage";
 import { AppContext } from "../Utilities/AppContext";
 
 export default function MainLayout() {
-  const { addToCart, setWishList, cart, wishList, setCart, addToWishList } =
-    useContext(AppContext);
+  const { setWishList, setCart } = useContext(AppContext);
 
   useEffect(() => {
     const cartProduct = getCartFromLs();

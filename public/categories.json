@@ -11,12 +11,9 @@
     "id": 3,
     "category_name": "Smart Watches"
   },
+
   {
     "id": 4,
-    "category_name": "Power Banks"
-  },
-  {
-    "id": 5,
     "category_name": "Chargers"
   }
 ]

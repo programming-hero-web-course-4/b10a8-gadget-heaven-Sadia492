@@ -1,12 +1,17 @@
 import React from "react";
 import BannerImg from "../assets/banner.jpg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Banner() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   return (
     <div className=" relative">
-      <div className="bg-primary text-white w-[95%] mx-auto flex flex-col text-center justify-center space-y-6 items-center pt-12 rounded-b-3xl pb-48">
+      <div
+        className={`bg-primary text-white w-[95%] mx-auto flex flex-col text-center justify-center space-y-6 items-center pt-12 ${
+          pathname === "/" ? "rounded-b-3xl" : "rounded-3xl"
+        }  pb-48`}
+      >
         <h1 className="font-bold text-3xl lg:text-5xl lg:w-3/4">
           Upgrade Your Tech Accessorize with Gadget Heaven Accessories
         </h1>

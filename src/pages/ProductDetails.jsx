@@ -38,23 +38,19 @@ export default function ProductDetails() {
 
   const {
     product_title,
-    product_id,
     product_image,
-    category,
     price,
     description,
     availability,
     rating,
     specification,
-  } = product;
-  const { addToCart, setWishList, cart, wishList, setCart, addToWishList } =
-    useContext(AppContext);
+  } = product || {};
+  const { addToCart, addToWishList } = useContext(AppContext);
 
   const handleCartBtn = (product) => {
     addCartToLs(product);
     addToCart(product);
   };
-  console.log(cart);
 
   const handleWishBtn = (product) => {
     addWishToLs(product);

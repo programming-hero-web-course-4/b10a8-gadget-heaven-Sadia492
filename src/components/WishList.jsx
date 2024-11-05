@@ -37,6 +37,9 @@ export default function WishList() {
                 <h5 className="font-semibold text-xl">
                   Price: ${single.price.toFixed(2)}
                 </h5>
+                <button className="bg-primary text-white rounded-full py-2 px-4">
+                  Add To Cart
+                </button>
               </div>
               <div className="">
                 <button

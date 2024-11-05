@@ -2,17 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Product({ product }) {
-  const {
-    product_title,
-    product_id,
-    product_image,
-    category,
-    price,
-    description,
-    availability,
-    rating,
-    specification,
-  } = product;
+  const { product_title, product_id, product_image, price } = product || {};
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure className="p-4 w-full">
