@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ModalIcon from "../assets/Group.png";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../Utilities/AppContext";
 
-export default function Modal({ storedPrice }) {
+export default function Modal() {
   const navigate = useNavigate();
   const handleForm = (e) => {
     e.preventDefault();
   };
+
+  const { addToCart, cart, setCart, totalCost, storedPrice } =
+    useContext(AppContext);
+  console.log(storedPrice);
+
+  // const { addToCart, cart, setCart, totalCost } = useContext(AppContext);
+
+  // useEffect(() => {
+  //   setStoredPrice(totalCost);
+  // }, [totalCost]);
+
+  // console.log(storedPrice);
+
   return (
     <div>
       {/* Open the modal using document.getElementById('ID').showModal() method */}

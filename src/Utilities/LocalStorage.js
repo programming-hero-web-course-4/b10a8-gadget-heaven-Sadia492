@@ -8,16 +8,12 @@ const getCartFromLs = () => {
   return [];
 };
 
-const addCartToLs = (id) => {
+const addCartToLs = (product) => {
   const cart = getCartFromLs();
-  const duplicate = cart.find((idx) => idx === id);
-  if (!duplicate) {
-    cart.push(id);
-    saveCartToLs(cart);
-    toast.success("Cart Added");
-  } else {
-    toast.error("already exists");
-  }
+
+  cart.push(product);
+  saveCartToLs(cart);
+  toast.success("Cart Added");
 };
 
 const saveCartToLs = (cart) => {
@@ -31,16 +27,12 @@ const getWishFromLs = () => {
   return [];
 };
 
-const addWishToLs = (id) => {
+const addWishToLs = (product) => {
   const wishlist = getWishFromLs();
-  const duplicate = wishlist.find((idx) => idx === id);
-  if (!duplicate) {
-    wishlist.push(id);
-    saveWishToLs(wishlist);
-    toast.success("Wish Added");
-  } else {
-    toast.error("already exists");
-  }
+
+  wishlist.push(product);
+  saveWishToLs(wishlist);
+  toast.success("Wish Added");
 };
 
 const saveWishToLs = (wish) => {

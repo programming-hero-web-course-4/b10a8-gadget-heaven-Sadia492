@@ -1,11 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { AppContext } from "../Utilities/AppContext";
+import Modal from "./Modal";
 
-export default function Cart({
-  cart,
-  handleSortBtn,
-  handlePurchaseBtn,
-  totalCost,
-}) {
+export default function Cart({ handleSortBtn }) {
+  const { setCart, cart, totalCost, storedPrice, handlePurchase } =
+    useContext(AppContext);
+  console.log(storedPrice);
+  //   const [storedPrice, setStoredPrice] = useState(0);
+
+  //   const handlePurchaseBtn = () => {
+  //     setStoredPrice(totalCost); // Set the stored price to the current total cost
+  //     setCart([]); // Clear the cart immediately after setting stored price
+  //     localStorage.removeItem("cart"); // Clear cart data from local storage
+  //   };
+
+  // Show the modal only after `storedPrice` is updated
+  //   useEffect(() => {
+  //     if (storedPrice > 0) {
+  //       my_modal_1.showModal(); // Only show the modal once storedPrice is updated
+  //     }
+  //   }, [storedPrice]);
   return (
     <div className="w-4/5 mx-auto">
       <div className="flex justify-between items-center mt-8 mb-6">
@@ -35,7 +49,7 @@ export default function Cart({
             </svg>
           </button>
           <button
-            onClick={handlePurchaseBtn}
+            onClick={handlePurchase}
             className="bg-primary rounded-full shadow-[0_4px_50px_0px_rgba(11,11,11,0.15)] w-28 h-12 text-white"
           >
             Purchase
@@ -70,6 +84,7 @@ export default function Cart({
           </div>
         ))}
       </div>
+      <Modal storedPrice={storedPrice}></Modal>
     </div>
   );
 }

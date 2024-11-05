@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../Utilities/AppContext";
 
-export default function WishList({ wishList }) {
+export default function WishList() {
+  const { wishList } = useContext(AppContext);
   return (
     <div className="w-4/5 mx-auto">
       <h2 className="font-bold text-2xl mt-8 mb-6 ">WishList</h2>

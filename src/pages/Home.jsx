@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
 import { Outlet, useLoaderData } from "react-router-dom";
-import Products from "../components/Products";
 
 export default function Home() {
   const categories = useLoaderData();

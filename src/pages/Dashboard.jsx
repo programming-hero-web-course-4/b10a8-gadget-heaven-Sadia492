@@ -1,42 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getCartFromLs, getWishFromLs } from "../Utilities/LocalStorage";
 import Heading from "../components/Heading";
 import Cart from "../components/Cart";
 import WishList from "../components/WishList";
 import Modal from "../components/Modal";
+import { AppContext } from "../Utilities/AppContext";
+// import { AppContext } from "../Utilities/AppContext";
 
 export default function Dashboard() {
   const [isActive, setIsActive] = useState(true);
-  const [cart, setCart] = useState([]);
-  const [wishList, setWishList] = useState([]);
+  // const [cart, setCart] = useState([]);
+  // const [wishList, setWishList] = useState([]);
   const data = useLoaderData();
-  const [totalCost, setTotalCost] = useState(0);
-  const [storedPrice, setStoredPrice] = useState(0);
+  // const [totalCost, setTotalCost] = useState(0);
+  // const [storedPrice, setStoredPrice] = useState(0);
 
-  useEffect(() => {
-    if (data.length) {
-      const selectedItem = getCartFromLs();
-      const selectedWish = getWishFromLs();
-      const savedCart = [];
-      const savedWish = [];
-      for (const id of selectedItem) {
-        const product = data.find(
-          (singleProduct) => singleProduct.product_id === id
-        );
-        savedCart.push(product);
-      }
-      for (const id of selectedWish) {
-        const product = data.find(
-          (singleProduct) => singleProduct.product_id === id
-        );
-        savedWish.push(product);
-      }
-      setCart(savedCart);
-      setWishList(savedWish);
-    }
-  }, [data]);
-  // console.log(wishList);
+  const { addToCart, cart, setCart, totalCost } = useContext(AppContext);
 
   const handleDashboard = (type) => {
     if (type === "cart") {
@@ -51,18 +31,16 @@ export default function Dashboard() {
     setCart(sortedCart);
   };
 
-  useEffect(() => {
-    const total = cart.reduce((prev, curr) => prev + curr.price, 0);
-    setTotalCost(total);
-  }, [cart]);
+  // useEffect(() => {
+  //   const total = cart.reduce((prev, curr) => prev + curr.price, 0);
+  //   setTotalCost(total);
+  // }, [cart]);
+  // useEffect(() => {
+  //   setStoredPrice(totalCost);
+  // }, [totalCost]);
 
-  const handlePurchaseBtn = () => {
-    setStoredPrice(totalCost);
-    my_modal_1.showModal();
-    setTotalCost(0);
-    setCart([]);
-    localStorage.removeItem("cart");
-  };
+  // console.log(storedPrice);
+
   return (
     <div>
       <div className="bg-primary pb-8">
@@ -73,13 +51,21 @@ export default function Dashboard() {
         <div className="flex justify-center gap-4">
           <button
             onClick={() => handleDashboard("cart")}
-            className=" bg-white text-primary rounded-full w-28 h-10"
+            className={` rounded-full w-28 h-10 ${
+              isActive
+                ? "bg-white text-primary"
+                : "text-white  border-white border-2"
+            }`}
           >
             Cart
           </button>
           <button
             onClick={() => handleDashboard("wishlist")}
-            className=" text-white rounded-full w-28 h-10 border-white border-2"
+            className={` rounded-full w-28 h-10 ${
+              !isActive
+                ? "bg-white text-primary"
+                : "text-white  border-white border-2"
+            }`}
           >
             WishList
           </button>
@@ -87,17 +73,11 @@ export default function Dashboard() {
       </div>
       <div>
         {isActive ? (
-          <Cart
-            cart={cart}
-            handlePurchaseBtn={handlePurchaseBtn}
-            totalCost={totalCost}
-            handleSortBtn={handleSortBtn}
-          ></Cart>
+          <Cart handleSortBtn={handleSortBtn}></Cart>
         ) : (
-          <WishList wishList={wishList}></WishList>
+          <WishList></WishList>
         )}
       </div>
-      <Modal storedPrice={storedPrice}></Modal>
     </div>
   );
 }

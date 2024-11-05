@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-stars";
 import { BsCart3 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
-import { addCartToLs, addWishToLs } from "../Utilities/LocalStorage";
-import { toast } from "react-toastify";
+import {
+  addCartToLs,
+  addWishToLs,
+  getCartFromLs,
+  getWishFromLs,
+} from "../Utilities/LocalStorage";
+
+import { AppContext } from "../Utilities/AppContext";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
@@ -28,12 +34,19 @@ export default function ProductDetails() {
     rating,
     specification,
   } = product;
+  const { addToCart, setWishList, cart, wishList, setCart, addToWishList } =
+    useContext(AppContext);
 
-  const handleCartBtn = (id) => {
-    addCartToLs(id);
+  const handleCartBtn = (product) => {
+    addCartToLs(product);
+    addToCart(product);
   };
-  const handleWishBtn = (id) => {
-    addWishToLs(id);
+  console.log(cart);
+
+  const handleWishBtn = (product) => {
+    addWishToLs(product);
+
+    addToWishList(product);
   };
 
   return (
@@ -83,13 +96,13 @@ export default function ProductDetails() {
           </div>
           <div className="flex gap-3">
             <button
-              onClick={() => handleCartBtn(product_id)}
+              onClick={() => handleCartBtn(product)}
               className="flex justify-center items-center gap-1 bg-primary text-white rounded-full py-2 px-3"
             >
               Add to Cart <BsCart3 size={20}></BsCart3>
             </button>
             <button
-              onClick={() => handleWishBtn(product_id)}
+              onClick={() => handleWishBtn(product)}
               className="border-2 rounded-full p-3"
             >
               <CiHeart size={20}></CiHeart>

@@ -1,43 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useLoaderData, useLocation } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { getCartFromLs, getWishFromLs } from "../Utilities/LocalStorage";
+import { AppContext } from "../Utilities/AppContext";
 
 export default function Navbar() {
-  const [cart, setCart] = useState([]);
-  const [wishList, setWishList] = useState([]);
-  const [totalCost, setTotalCost] = useState(0);
-  const data = useLoaderData();
-
-  useEffect(() => {
-    if (data.length) {
-      const selectedItem = getCartFromLs();
-      const selectedWish = getWishFromLs();
-      const savedCart = [];
-      const savedWish = [];
-      for (const id of selectedItem) {
-        const product = data.find(
-          (singleProduct) => singleProduct.product_id === id
-        );
-        savedCart.push(product);
-      }
-      for (const id of selectedWish) {
-        const product = data.find(
-          (singleProduct) => singleProduct.product_id === id
-        );
-        savedWish.push(product);
-      }
-      setCart(savedCart);
-      setWishList(savedWish);
-    }
-  }, [data]);
-
-  useEffect(() => {
-    const total = cart.reduce((prev, curr) => prev + curr.price, 0);
-    setTotalCost(total);
-  }, [cart]);
-
   const links = (
     <>
       <NavLink to="/">
@@ -55,12 +23,8 @@ export default function Navbar() {
   );
 
   const { pathname } = useLocation();
-  // const [cart, setCart] = useState([]);
-  // useEffect(() => {
-  //   const cart = getCartFromLs();
-  //   setCart(cart);
-  // }, []);
-  // console.log(cart);
+
+  const { addToCart, cart, wishList } = useContext(AppContext);
 
   return (
     <div className={` ${pathname === "/" ? "pt-6" : ""}`}>
@@ -127,7 +91,7 @@ export default function Navbar() {
                     <span className="text-lg font-bold">
                       {cart.length} Items
                     </span>
-                    <span className="text-info">Subtotal: ${totalCost}</span>
+                    {/* <span className="text-info">Subtotal: ${totalCost}</span> */}
                     <div className="card-actions">
                       <button className="btn btn-primary btn-block">
                         View cart
